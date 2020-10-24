@@ -7,4 +7,3 @@
 | 1.1.0   | :white_check_mark: |
 | > 1.0.0 | :x:                |
 ### first ever open source fortnite cheat download skids
-
