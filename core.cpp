@@ -236,7 +236,7 @@ namespace Core {
 
 
 		// CalculateSpread
-		/*
+		/* doesnt work obv
 		addr = Util::FindPattern("\x83\x79\x78\x00\x4C\x8B\xC9\x75\x0F\x0F\x57\xC0\xC7\x02\x00\x00\x00\x00\xF3\x41\x0F\x11\x00\xC3\x48\x8B\x41\x70\x8B\x48\x04\x89\x0A\x49\x63\x41\x78\x48\x6B\xC8\x1C\x49\x8B\x41\x70\xF3\x0F\x10\x44\x01\x00\xF3\x41\x0F\x11\x00\xC3", "xxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?xxxxxx");
 		if (!addr) {
 			MessageBox(0, L"Failed to find CalculateSpread", L"Failure", 0);
@@ -275,15 +275,15 @@ namespace Core {
 		MH_CreateHook(addr, GetViewPointHook, (PVOID*)&GetViewPoint);
 		MH_EnableHook(addr);
 
-		// Reload
-		Util::FindPattern("\x40\x55\x53\x57\x41\x56\x48\x8D\xAC\x24\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x0F\x29\xBC\x24\x00\x00\x00\x00", "xxxxxxxxxx????xxx????xxxx????");
-		if (!addr) {
-			MessageBox(0, L"Failed to find Reload", L"Failure", 0);
-			return FALSE;
-		}
+		// Reload also doesnt work
+		//Util::FindPattern("\x40\x55\x53\x57\x41\x56\x48\x8D\xAC\x24\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x0F\x29\xBC\x24\x00\x00\x00\x00", "xxxxxxxxxx????xxx????xxxx????");
+		//if (!addr) {
+		//	MessageBox(0, L"Failed to find Reload", L"Failure", 0);
+		//	return FALSE;
+		//}
 
-		MH_CreateHook(addr, ReloadHook, (PVOID*)&ReloadOriginal);
-		MH_EnableHook(addr);
+		//MH_CreateHook(addr, ReloadHook, (PVOID*)&ReloadOriginal);
+		//MH_EnableHook(addr);
 
 		return TRUE;
 	}
